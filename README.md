@@ -12,6 +12,26 @@ Features:
 - Simple web GUI using Flask so you can control the LEDs from a web gui (on a phone, tablet or laptop)
 
 
+## Installing ##
+
+To install, clone this repository into the home directory of your "pi" user (/home/pi):
+
+```
+git clone https://github.com/ahatherly/led-strip-pi.git
+```
+
+You can try it out directly from the command line:
+
+```
+cd led-strip-pi
+./led.sh start
+```
+
+You can stop it again using:
+
+```
+./led.sh stop
+```
 
 ## Starting the web gui on boot ##
 
