@@ -11,3 +11,20 @@ Features:
 - Small wrapper to run the code as a daemon which can then be controlled from the command line to set and change patterns
 - Simple web GUI using Flask so you can control the LEDs from a web gui (on a phone, tablet or laptop)
 
+
+
+## Starting the web gui on boot ##
+
+You'll need to install green unicorn into your python environment (for the root user):
+
+```
+sudo pip install gunicorn
+```
+
+Now, you can add the below lines into /etc/rc.local to start the web server at boot:
+
+```
+# Start LED Web GUI
+cd /home/pi/led-strip-pi && gunicorn --daemon --bind 0.0.0.0:80 wsgi
+```
+

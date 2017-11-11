@@ -17,22 +17,22 @@ def favicon():
 @application.route("/start/<pattern>")
 def start(pattern):
     stop()
-    subprocess.call(["/home/pi/led.sh", "start", pattern])
+    subprocess.call(["/home/pi/led-strip-pi/led.sh", "start", pattern])
     return "Activated!"
 
 @application.route("/off")
 def off():
-    subprocess.call(["/home/pi/led.sh", "stop"])
+    subprocess.call(["/home/pi/led-strip-pi/led.sh", "stop"])
     return "All off!"
 
 def stop():
-    subprocess.call(["/home/pi/led.sh", "stop"])
+    subprocess.call(["/home/pi/led-strip-pi/led.sh", "stop"])
     time.sleep(0.5)
 
 @application.route("/rgb/<r>/<g>/<b>")
 def rgb(r, g, b):
     stop()
-    subprocess.call(["/home/pi/led.sh", "start", r, g, b])
+    subprocess.call(["/home/pi/led-strip-pi/led.sh", "start", r, g, b])
     return "Activated!"
 
 if __name__ == "__main__":
