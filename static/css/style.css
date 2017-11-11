@@ -1,0 +1,44 @@
+body {
+  /*padding-top: 5rem;*/
+}
+
+.colour1 {
+	background: rgb(255,0,0)
+}
+.colour2 {
+	background: rgb(0,255,0)
+}
+.colour3 {
+	background: rgb(0,0,255)
+}
+.colour4 {
+	background: rgb(255,255,0)
+}
+.colour5 {
+	background: rgb(255,0,255)
+}
+.colour6 {
+	background: rgb(255,144,0)
+}
+.colour7 {
+	background: rgb(0,255,255)
+}
+.colour8 {
+	background: rgb(148,0,255)
+}
+.colour9 {
+	background: rgb(255,255,255)
+}
+.colour10 {
+      /* For Safari 5.1 to 6.0 */
+      background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+      /* For Opera 11.1 to 12.0 */
+      background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+      /* For Fx 3.6 to 15 */
+      background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+      /* Standard syntax */
+      background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+}
+a.btn.btn-default {
+    height: 50px;
+}

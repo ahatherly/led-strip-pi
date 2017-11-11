@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+    <!--<link rel="stylesheet" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-reboot.min.css">-->
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">LED Remote Control</a>
+		</div>
+	  </div><!-- /.container-fluid -->
+	</nav>
+  
+    <div class="container">
+    	<div class="ledbuttons">
+			<div class="row">
+				<div class="col">
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default" onclick="stopLed()" role="button">All Off</a>
+					</div>
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default" onclick="runLed('colourfade')" role="button">Colour Fade</a>
+						<a href="#" class="btn btn-default" onclick="runLed('funkycolours')" role="button">Funky Colours</a>
+					</div>
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default" onclick="runLed('randomcolours')" role="button">Random Colours</a>
+						<a href="#" class="btn btn-default" onclick="runLed('pong')" role="button">Pong</a>
+					</div>
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default" onclick="runLed('larsson')" role="button">Knight Rider</a>
+						<a href="#" class="btn btn-default" onclick="runLed('birthday1')" role="button">Birthday Dots</a>
+					</div>
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default" onclick="runLed('christmas1')" role="button">Christmas1</a>
+					    <a href="#" class="btn btn-default" onclick="runLed('christmas2')" role="button">Christmas2</a>
+					</div>
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default" onclick="runLed('christmas3')" role="button">Christmas3</a>
+						<a href="#" class="btn btn-default" onclick="runLed('christmas4')" role="button">Christmas4</a>
+					</div>
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default colour1" onclick="rgbLed(255,0,0)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour2" onclick="rgbLed(0,255,0)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour3" onclick="rgbLed(0,0,255)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour4" onclick="rgbLed(255,255,0)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour5" onclick="rgbLed(255,0,255)" role="button">&nbsp;</a>
+					</div>
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+						<a href="#" class="btn btn-default colour6" onclick="rgbLed(255,60,0)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour7" onclick="rgbLed(0,255,255)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour8" onclick="rgbLed(50,0,255)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour9" onclick="rgbLed(255,255,255)" role="button">&nbsp;</a>
+						<a href="#" class="btn btn-default colour10" onclick="runLed('rainbow')" role="button">&nbsp;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script>
+    	function runLed(pattern) {
+    		$.get( "/start/"+pattern );
+    	}
+    	function stopLed() {
+    		$.get( "/off" );
+    	}
+    	function rgbLed(r,g,b) {
+    		$.get( "/rgb/"+r+"/"+g+"/"+b );
+    	}
+    </script>
+  </body>
+</html>
